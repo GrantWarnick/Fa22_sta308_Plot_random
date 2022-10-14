@@ -23,11 +23,11 @@
 
 library(tidyverse)
 plotRandomNormals<- function(numpts=50, Bins=10 ,
-                            mu=0, simga=1,
+                            mu=0, sigma=1,
                             seed=NULL){
   set.seed(seed)
   rand_sample<- rnorm(numpts,mean=mu,sd=sigma)
-  hist(rnorm(rand_sample), breaks=Bins+1)
+  hist(rand_sample, breaks=Bins+1)
   abline(v=mean(rand_sample),col="blue")
   list(Randomsample=rand_sample,MeanSample=mean(rand_sample),SDSample=sd(rand_sample))
 }
